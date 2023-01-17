@@ -12,9 +12,9 @@
 ------------
 
 
-###Lists
+### Lists
 
-####Unordered list (-)
+#### Unordered list (-)
 
 - Python
 - Flask,flask_sqlalchemy
@@ -23,7 +23,7 @@
 ##### dockerfile and hasura files are in hasura folder
 
 
-####credentials (*)
+#### credentials (*)
 
 * SQLALCHEMY_DATABASE_URI="your own postgres(here postgres is used)"
 * SECRET_KEY="your own"
