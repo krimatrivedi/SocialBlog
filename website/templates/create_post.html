@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="static/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<h1 align="center">Make a Post</h1>
+
+<form method="POST">
+  <textarea name="text" id="text" class="form-control"></textarea>
+  <br />
+  <div align="center" class="form-group form-button">
+    <input type="submit" name="signin" id="signin" class="form-submit" value="Create a Post" />
+  </div>
+</form>
+<br />
+<div align="center">
+  <a href="/home"
+    ><button type="button" class="btn btn-lg btn-secondary">Back</button></a
+  >
+</div>
+{% endblock %}

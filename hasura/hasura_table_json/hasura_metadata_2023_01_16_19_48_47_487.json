@@ -1,0 +1,109 @@
+{
+  "resource_version": 13,
+  "metadata": {
+    "version": 3,
+    "sources": [
+      {
+        "name": "data1",
+        "kind": "postgres",
+        "tables": [
+          {
+            "table": {
+              "name": "comment",
+              "schema": "public"
+            }
+          },
+          {
+            "table": {
+              "name": "like",
+              "schema": "public"
+            }
+          },
+          {
+            "table": {
+              "name": "post",
+              "schema": "public"
+            },
+            "array_relationships": [
+              {
+                "name": "comments",
+                "using": {
+                  "foreign_key_constraint_on": {
+                    "column": "post_id",
+                    "table": {
+                      "name": "comment",
+                      "schema": "public"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "likes",
+                "using": {
+                  "foreign_key_constraint_on": {
+                    "column": "post_id",
+                    "table": {
+                      "name": "like",
+                      "schema": "public"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "table": {
+              "name": "user",
+              "schema": "public"
+            },
+            "array_relationships": [
+              {
+                "name": "comments",
+                "using": {
+                  "foreign_key_constraint_on": {
+                    "column": "author",
+                    "table": {
+                      "name": "comment",
+                      "schema": "public"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "likes",
+                "using": {
+                  "foreign_key_constraint_on": {
+                    "column": "author",
+                    "table": {
+                      "name": "like",
+                      "schema": "public"
+                    }
+                  }
+                }
+              },
+              {
+                "name": "posts",
+                "using": {
+                  "foreign_key_constraint_on": {
+                    "column": "author",
+                    "table": {
+                      "name": "post",
+                      "schema": "public"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "configuration": {
+          "connection_info": {
+            "database_url": "postgres://username:password@postgres:port/database",
+            "isolation_level": "read-committed",
+            "use_prepared_statements": false
+          }
+        }
+      }
+    ]
+  }
+}
